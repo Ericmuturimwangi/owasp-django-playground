@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block container_class %}max-w-2xl{% endblock %}
+{% block content %}
+<div class="flex items-center justify-between">
+  <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Documents</h2>
+  <a
+    href="create/"
+    class="rounded-md bg-slate-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-slate-700"
+  >
+    + new
+  </a>
+</div>
+
+<ul class="mt-6 divide-y divide-slate-200 rounded-lg border border-slate-200 bg-white shadow-sm">
+  {% for doc in docs %}
+  <li>
+    <a href="{{ doc.pk }}/" class="flex items-center justify-between gap-4 px-4 py-3 hover:bg-slate-50">
+      <span class="text-sm text-slate-800">
+        <span class="text-slate-400">#{{ doc.pk }}</span> {{ doc.title }}
+      </span>
+      <span class="flex items-center gap-2 text-xs text-slate-400">
+        owner {{ doc.owner_id }}
+        {% if doc.is_published %}
+        <span class="rounded-md bg-teal-50 px-2 py-0.5 font-medium text-teal-700 ring-1 ring-inset ring-teal-200">published</span>
+        {% endif %}
+      </span>
+    </a>
+  </li>
+  {% empty %}
+  <li class="px-4 py-3 text-sm text-slate-400">none</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block container_class %}max-w-md{% endblock %}
+{% block content %}
+<h2 class="text-2xl font-semibold tracking-tight text-slate-900">New document</h2>
+
+<style>
+  .doc-form p { margin-bottom: 1rem; }
+  .doc-form label { display: block; font-size: 0.875rem; font-weight: 500; color: #475569; margin-bottom: 0.25rem; }
+  .doc-form input[type="text"],
+  .doc-form input[type="number"],
+  .doc-form textarea,
+  .doc-form select {
+    display: block; width: 100%; border-radius: 0.375rem; border: 0;
+    padding: 0.5rem 0.75rem; color: #0f172a;
+    box-shadow: inset 0 0 0 1px #cbd5e1;
+  }
+  .doc-form input[type="text"]:focus,
+  .doc-form input[type="number"]:focus,
+  .doc-form textarea:focus,
+  .doc-form select:focus {
+    outline: none; box-shadow: inset 0 0 0 2px #64748b;
+  }
+  .doc-form input[type="checkbox"] { width: 1rem; height: 1rem; margin-right: 0.5rem; }
+  .doc-form .errorlist { color: #e11d48; font-size: 0.875rem; padding-left: 0; margin: 0.25rem 0 0; list-style: none; }
+</style>
+
+<form method="post" class="doc-form mt-6">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button
+    type="submit"
+    class="w-full rounded-md bg-slate-900 px-3 py-2 text-sm font-semibold text-white hover:bg-slate-700"
+  >
+    Save
+  </button>
+</form>
+{% endblock %}

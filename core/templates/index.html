@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Secure / Vulnerable Django demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-800">
+    <main class="mx-auto max-w-2xl px-6 py-16">
+      <h1 class="text-3xl font-semibold tracking-tight text-slate-900">
+        Secure / Vulnerable Django demo
+      </h1>
+      <p class="mt-3 text-slate-600">
+        Compare
+        <code class="rounded bg-slate-200 px-1.5 py-0.5 text-sm text-slate-700">/vuln/...</code>
+        vs
+        <code class="rounded bg-slate-200 px-1.5 py-0.5 text-sm text-slate-700">/secure/...</code>
+        implementations side by side.
+      </p>
+
+      <div class="mt-10 space-y-4">
+        <div class="flex items-center justify-between gap-4 rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+          <span class="font-medium text-slate-700">Login</span>
+          <div class="flex gap-3">
+            <a href="/vuln/login/" class="rounded-md bg-rose-50 px-3 py-1.5 text-sm font-medium text-rose-700 ring-1 ring-inset ring-rose-200 hover:bg-rose-100">
+              /vuln/login/
+            </a>
+            <a href="/secure/login/" class="rounded-md bg-teal-50 px-3 py-1.5 text-sm font-medium text-teal-700 ring-1 ring-inset ring-teal-200 hover:bg-teal-100">
+              /secure/login/
+            </a>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-4 rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+          <span class="font-medium text-slate-700">Documents</span>
+          <div class="flex gap-3">
+            <a href="/vuln/documents/" class="rounded-md bg-rose-50 px-3 py-1.5 text-sm font-medium text-rose-700 ring-1 ring-inset ring-rose-200 hover:bg-rose-100">
+              /vuln/documents/
+            </a>
+            <a href="/secure/documents/" class="rounded-md bg-teal-50 px-3 py-1.5 text-sm font-medium text-teal-700 ring-1 ring-inset ring-teal-200 hover:bg-teal-100">
+              /secure/documents/
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
